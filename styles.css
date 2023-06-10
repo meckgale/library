@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    padding-bottom: 1rem;
+    font-family: 'Philosopher', sans-serif;
+    background-image: url(img/ancientLibrary.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    gap: 2rem;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    padding: 1rem;
+    background-color: hsla(30, 25%, 91%, 0.2); 
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    width: 100%;
+}
+
+.header-btn {
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    background: none;
+    min-width: 3rem;    
+}
+
+.header-btn-svg {
+    filter: invert(0) opacity(0.7);
+    transition: transform 250ms;
+}
+
+.header-btn-svg:hover {
+    filter: invert(1);
+    transform: scale(1.2);
+}
+
+/* MAIN */
+
+/* FORM */
+
+.form-frame {
+    position: fixed;
+    display: none;
+    z-index: 1;
+    margin-top: 15%;
+}
+
+.form-frame.active {
+    display: flex;
+}
+
+.book-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    background-color: hsla(30, 25%, 91%, 0.5);
+    z-index: 2;
+    border-radius: 1rem;
+}
+
+.book-form-close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border: none;
+    background: none;
+    width: 2rem;
+    height: 2rem;
+}
+
+.book-form-close-btn-svg {
+    filter: invert(0) opacity(0.7);
+    transition: transform 250ms;
+}
+
+.book-form-close-btn-svg:hover {
+    filter: invert(0.2) sepia(50%) saturate(100);
+}
+
+.book-form-set {
+    padding: 1rem;
+    border: none;
+}
+
+.book-form-set input {
+    margin-bottom: 1rem;
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    border: 2px solid hsla(0, 0%, 0%, 0.2);
+}
+
+.book-form-set input:hover {
+    border: 2px solid hsla(0, 0%, 0%, 0.4);
+}
+
+form input[type="text"], form input[type="number"] {
+    border-radius: 1rem;
+}
+
+form input[type="checkbox"] {
+    height: 1rem;
+    width: 1rem;
+}
+
+
+.book-form-btn {
+    border-radius: 1rem;
+    border: none;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.book-form-btn:hover {
+    filter: invert(0.2);
+    transition: transform 250ms;
+}
+
+/* FOOTER */

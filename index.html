@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>The Great Library</h1>
+            <button class="header-btn"><img class="header-btn-svg" src="./icon/bookPlus.svg" 
+                alt=""></button>
+        </div>
+    </header>
+    <main></main>
+    <section class="form-frame">
+        <form class="book-form">
+            <button class="book-form-close-btn" type="button"><img class="book-form-close-btn-svg" 
+                src="./icon/close.svg" alt=""></button>
+            <fieldset class="book-form-set">
+                <label for="title">Book Title</label>
+                <input type="text" id="title" name="title" required>
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" required>
+                <label for="pages">Pages</label>
+                <input type="number" id="pages" name="pages" required>
+                <label for="read">I read this book</label>
+                <input type="checkbox" id="read" name="read">
+            </fieldset>
+            <button class="book-form-btn" type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
