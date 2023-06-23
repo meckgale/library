@@ -53,12 +53,20 @@ function render() {
     myLibrary.forEach((book, index) => {
         createBookCard(book, index);
     });
+    removeBook();
 }
 
 //Remove the book element
-
-
-
+function removeBook() {
+    const removeClick = document.querySelectorAll('.remove-btn');
+    removeClick.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            myLibrary.splice(btn.getAttribute('data'), 1);
+            console.log(btn.getAttribute('data'));
+            render();
+        });
+    });
+}
 
 //Create the Book elements for the page
 function createBookCard(book, index) {
@@ -89,20 +97,22 @@ function createBookCard(book, index) {
     const checkBox = document.createElement('input');
     checkBox.setAttribute('data', index);
     checkBox.setAttribute('type', 'checkbox');
+    checkBox.setAttribute('id', `checkbox${index}`);
+    checkBox.setAttribute('name', `checkbox${index}`);
     checkBox.classList.add('check-box');
     checkBox.checked = book.read;
     newCardDiv.append(checkBox);
 
     // //Add label for checkbox
-    // const checkBoxLabel = document.createElement('label');
-    // checkBoxLabel.setAttribute('for',`checkbox${index}`);
-    // checkBoxLabel.classList.add('check-box-label');
-    // //Add icon for the label
-    // const checkBoxIcon = document.createElement('img');
-    // checkBoxIcon.setAttribute('src', './icon/read.svg');
-    // checkBoxIcon.classList.add('check-box-icon');
-    // checkBoxLabel.append(checkBoxIcon);
-    // checkBox.append(checkBoxLabel);
+    const checkBoxLabel = document.createElement('label');
+    checkBoxLabel.setAttribute('for',`checkbox${index}`);
+    checkBoxLabel.classList.add('check-box-label');
+    //Add icon for the label
+    const checkBoxIcon = document.createElement('img');
+    checkBoxIcon.setAttribute('src', './icon/R.svg');
+    checkBoxIcon.classList.add('check-box-icon');
+    checkBoxLabel.append(checkBoxIcon);
+    newCardDiv.append(checkBoxLabel);
 
 
     //Add remove button for book card
