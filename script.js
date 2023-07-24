@@ -8,6 +8,16 @@ const openFormBtn = document.querySelector('.header-btn');
 const closeFormBtn = document.querySelector('.book-form-close-btn');
 const formFrame = document.querySelector('.form-frame');
 
+//The constructor...
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+}
+
 //Book samples
 let ex1 = new Book('The Lord of the Rings', 'J.R.R. Tolkien', '1178', false);
 let ex2 = new Book('A Game of Thrones', 'George R. R. Martin', '694', false);
@@ -21,14 +31,6 @@ closeFormBtn.addEventListener('click', () => formFrame.classList.remove('active'
 
 //Library
 const myLibrary = [ex1, ex2, ex3];
-
-//The constructor...
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
 
 //Add books to library
 bookForm.addEventListener('submit', (e) => {
